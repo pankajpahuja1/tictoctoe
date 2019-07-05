@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/board"
+        app:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rowCount="3">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="0"
+            app:layout_row="0"
+            android:onClick="dropin"
+            android:contentDescription="@string/desc"
+            android:tag="0"
+
+            />
+        <ImageView
+            android:id="@+id/im2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="1"
+            app:layout_row="0"
+            android:onClick="dropin"
+            android:tag="1"
+            android:contentDescription="@string/desc"
+            />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="2"
+            app:layout_row="0"
+            android:contentDescription="@string/desc"
+            android:onClick="dropin"
+            android:tag="2"/>
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="0"
+            app:layout_row="1"
+            android:contentDescription="@string/desc"
+            android:onClick="dropin"
+            android:tag="3"/>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="1"
+            android:contentDescription="@string/desc"
+            app:layout_row="1"
+            android:onClick="dropin"
+            android:tag="4"
+            />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="2"
+            android:onClick="dropin"
+            android:contentDescription="@string/desc"
+            app:layout_row="1"
+            android:tag="5"
+            />
+
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="2"
+            app:layout_row="2"
+            android:contentDescription="@string/desc"
+            android:onClick="dropin"
+            android:tag="8"
+            />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="1"
+            android:contentDescription="@string/desc"
+            app:layout_row="2"
+            android:onClick="dropin"
+            android:tag="7"
+          />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="18dp"
+            app:layout_column="0"
+            android:onClick="dropin"
+            android:contentDescription="@string/desc"
+            app:layout_row="2"
+            android:tag="6"
+            />
+
+
+
+
+
+
+
+    </android.support.v7.widget.GridLayout>
+</android.support.constraint.ConstraintLayout>
