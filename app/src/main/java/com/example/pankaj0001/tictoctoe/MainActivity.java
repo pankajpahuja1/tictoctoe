@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
 //tag from image view to use as index for storing values
 
 
@@ -60,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
             )
             {
 
-                Log.d("haha",trigger[0]+"");
+               // Log.d("haha",trigger[0]+"");
+                ImageView win = findViewById(R.id.p1win);
+                win.setAlpha(1f);
                 Toast toast = Toast.makeText(getApplicationContext(),"player 1 wins",Toast.LENGTH_LONG);
                 toast.show();
                 // System.out.println(trigger[0]+trigger[4]+trigger[8]);
@@ -78,9 +82,11 @@ public class MainActivity extends AppCompatActivity {
             )
             {
 
-                Log.d("haha",trigger[0]+"");
+               // Log.d("haha",trigger[0]+"");
                 Toast toast = Toast.makeText(getApplicationContext(),"player 2 wins",Toast.LENGTH_LONG);
                 toast.show();
+                ImageView win = findViewById(R.id.p2win);
+                win.setAlpha(1f);
                 // System.out.println(trigger[0]+trigger[4]+trigger[8]);
 
             }
