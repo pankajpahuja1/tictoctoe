@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -38,21 +41,40 @@ public class MainActivity extends AppCompatActivity {
 
         int tapped = Integer.parseInt(i.getTag().toString());
 
+       // RotateAnimation rotate = new RotateAnimation(0, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+       // rotate.setDuration(5000);
+       // rotate.setInterpolator(new LinearInterpolator());
 
+       // ImageView image= (ImageView) findViewById(R.id.imageView);
+
+       // image.startAnimation(rotate);
 
 
 
         if (trigger[tapped] == 2) {
             i.setTranslationX(-1000f);
 
+
+
+            RotateAnimation rotate = new RotateAnimation(0, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            rotate.setDuration(5000);
+            rotate.setInterpolator(new LinearInterpolator());
+
+
+
             if (activeP == 1) {
                 i.setImageResource(R.drawable.tom);
-              //  i.animate().rotation(180f).setDuration(3000);
+             /*   Log.d("haha",trigger[0]+"");
+               i.animate().rotation(60f).setDuration(30000);
+                Log.d("hahaha",trigger[0]+"");
+                */
+                i.startAnimation(rotate);
 
                 activeP = 0;
                 trigger[tapped]=8;
             } else if (activeP == 0) {
                 i.setImageResource(R.drawable.o);
+                i.startAnimation(rotate);
                // i.animate().rotation(180f).setDuration(3000);
 
                 activeP = 1;
