@@ -1,5 +1,6 @@
 package com.example.pankaj0001.tictoctoe;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,11 +9,18 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
+
+
 //1=cross 0=o
     int activeP = 1;
     //default values for trigger=2
     //if trigger has value 8 then cross tapped and if trigger has 9 then o
     int[] trigger = {2, 2, 2, 2, 2, 2, 2, 2, 2};
+
+
 
     public void dropin(View view) {
         ImageView i = (ImageView) view;
@@ -38,11 +46,15 @@ public class MainActivity extends AppCompatActivity {
             i.setTranslationX(-1000f);
 
             if (activeP == 1) {
-                i.setImageResource(R.drawable.cross);
+                i.setImageResource(R.drawable.tom);
+              //  i.animate().rotation(180f).setDuration(3000);
+
                 activeP = 0;
                 trigger[tapped]=8;
             } else if (activeP == 0) {
                 i.setImageResource(R.drawable.o);
+               // i.animate().rotation(180f).setDuration(3000);
+
                 activeP = 1;
                 trigger[tapped]=9;
 
@@ -98,6 +110,16 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
         }
     }
+    public void restart(View view)
+    {
+        Intent intent = getIntent();
+
+        finish();
+        startActivity(intent);
+       // startActivity(MainActivity.class,getIntent());
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
