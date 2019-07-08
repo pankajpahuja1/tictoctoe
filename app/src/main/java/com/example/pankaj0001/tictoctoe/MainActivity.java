@@ -1,6 +1,7 @@
 package com.example.pankaj0001.tictoctoe;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,12 +13,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    MediaPlayer mpalyer;
 
 
 
 
 
-//1=cross 0=o
+//1=tom 0=jerry
     int activeP = 1;
     //default values for trigger=2
     //if trigger has value 8 then cross tapped and if trigger has 9 then o
@@ -64,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (activeP == 1) {
                 i.setImageResource(R.drawable.tom);
+
+
              /*   Log.d("haha",trigger[0]+"");
                i.animate().rotation(60f).setDuration(30000);
                 Log.d("hahaha",trigger[0]+"");
@@ -81,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 trigger[tapped]=9;
 
             }
-
+                //player 1 wins game over
 
             i.animate().translationXBy(1000f).rotation(360f).setDuration(300);
             if((trigger[0]==8&&trigger[4]==8&&trigger[8]==8)
@@ -98,12 +102,19 @@ public class MainActivity extends AppCompatActivity {
 
                // Log.d("haha",trigger[0]+"");
                 ImageView win = findViewById(R.id.p1win);
+                for(int j=0;j<9;j++)
+                    trigger[j]=8;
                 win.setAlpha(1f);
-                Toast toast = Toast.makeText(getApplicationContext(),"player 1 wins",Toast.LENGTH_LONG);
-                toast.show();
+                mpalyer = MediaPlayer.create(this,R.raw.tandj);
+                mpalyer.start();
+               // Toast toast = Toast.makeText(getApplicationContext(),"player 1 wins",Toast.LENGTH_LONG);
+               // toast.show();
                 // System.out.println(trigger[0]+trigger[4]+trigger[8]);
 
             }
+
+            //player 2 wins toast
+
             else if((trigger[0]==9&&trigger[4]==9&&trigger[8]==9)
                     ||(trigger[2]==9&&trigger[4]==9&&trigger[6]==9)
                     ||(trigger[3]==9&&trigger[8]==9&&trigger[5]==9)
@@ -117,15 +128,21 @@ public class MainActivity extends AppCompatActivity {
             {
 
                // Log.d("haha",trigger[0]+"");
-                Toast toast = Toast.makeText(getApplicationContext(),"player 2 wins",Toast.LENGTH_LONG);
-                toast.show();
+               // Toast toast = Toast.makeText(getApplicationContext(),"player 2 wins",Toast.LENGTH_LONG);
+               // toast.show();
                 ImageView win = findViewById(R.id.p2win);
+                for(int j=0;j<9;j++)
+                    trigger[j]=9;
                 win.setAlpha(1f);
+                mpalyer = MediaPlayer.create(this,R.raw.tandj);
+                mpalyer.start();
                 // System.out.println(trigger[0]+trigger[4]+trigger[8]);
 
             }
 
         }
+
+        //already tapped place
         else
         {
             Toast  toast=Toast.makeText(getApplicationContext(),"invalid action",Toast.LENGTH_SHORT);
@@ -137,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         finish();
+        mpalyer.stop();
         startActivity(intent);
        // startActivity(MainActivity.class,getIntent());
 
